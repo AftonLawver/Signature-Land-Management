@@ -1,2 +1,21 @@
-# SignatureLandManagement
-Website for a Landscaping company called Signature Land Management.
+
+![Logo of the Project](/assets/images/signature_land_management_banner.png)
+
+---
+
+# Signature Land Management
+
+### Description
+- Website for a landscaping company called Signature Land Management. They are family-owned company located in Northern Illinois. 
+ 
+### Features
+
+
+### Features in Progress
+
+
+**Gif**
+
+
+
+
