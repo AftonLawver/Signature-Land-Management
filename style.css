@@ -1,0 +1,12 @@
+.bg-img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    filter: brightness(0.8);
+    position: absolute;
+}
+
+body {
+    height: 5000px;
+    overflow-x: hidden;
+}
