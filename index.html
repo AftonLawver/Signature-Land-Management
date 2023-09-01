@@ -9,34 +9,139 @@
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Lawn mowing Service in Northern Illinois</title>
-    <script type="text/javascript" src="bootstrap/bootstrap.min.js"></script>
+    <script defer type="text/javascript" src="bootstrap/bootstrap.min.js"></script>
 </head>
-<header>
-
-</header>
 <body>
+
+<!-- Open screen -->
 <img class="bg-img" src="/assets/images/homepage_background.jpg" alt="bg image">
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="/assets/images/logo_cropped.jpg" alt="brand logo" width="80" height="80"></a>
+            <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto text-uppercase">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<section class="pt-5">
     <div class="container">
-        <a class="navbar-brand" href="#"><img src="/assets/images/logo_cropped.jpg" alt="brand logo" width="45" height="45"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
-            </ul>
+        <div class="d-flex flex-column mb-3 vh-100">
+            <div class="h-33 d-flex align-items-center py-5">
+                <h1 class="text-center">
+                    <span class="display-1 lead text-light fw-bold">Signature Land Management</span>
+                </h1>
+            </div>
+            <div class="h-33 py-5">
+                <h1 class="text-center">
+                    <span><img src="assets/images/logo_cropped.jpg" alt="Logo" class="opacity-75 w-50 h-50"></span>
+                </h1>
+            </div>
+            <div class="h-33 py-5">
+                <h1 class="text-center">
+                <span class="display-6 lead text-light fw-bold">Providing quality landscaping services to the Northern Illinois area since 2021</span>
+                </h1>
+            </div>
         </div>
     </div>
+</section>
 
-</nav>
+<!-- Services -->
+<section id="services" class="p-2">
+    <div class="container">
+        <h1 class="text-center pb-5">Services</h1>
+        <div class="row text-center g-5">
+            <div class="col-lg">
+                <div class="card bg-dark text-light">
+                    <div class="card-body text-center">
+                        <div class="h1 mb-3">
+                            <img class="img-fluid" src="assets/images/spring.jpg" alt="">
+                        </div>
+                        <h3 class="card-title mb-3">
+                            Spring Cleaning
+                        </h3>
+                        <p class="card-text">
+                            Getting the lawn back to normal by cutting the grass, trimming sidewalks,
+                            clearing excess growth, collecting debris
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg">
+                <div class="card bg-dark text-light">
+                    <div class="card-body text-center">
+                        <div class="h1 mb-3">
+                            <img class="img-fluid" src="assets/images/lawn.jpg" alt="">
+                        </div>
+                        <h3 class="card-title mb-3">
+                            Lawn Maintenance
+                        </h3>
+                        <p class="card-text">
+                            Cutting the grass, trimming around sidewalks,
+                            picking up debris, and blowing sidewalks clear
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg">
+                <div class="card bg-dark text-light">
+                    <div class="card-body text-center">
+                        <div class="h1 mb-3">
+                            <img class="img-fluid" src="assets/images/fertilizer.jpg" alt="">
+                        </div>
+                        <h3 class="card-title mb-3">
+                            Weed Killer & Fertilizer
+                        </h3>
+                        <p class="card-text">
+                            Spray weed killer between sidewalks, add a blend for weed killer and fertilizer on the lawns
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg">
+                <div class="card bg-dark text-light">
+                    <div class="card-body text-center">
+                        <div class="h1 mb-3">
+                            <img class="img-fluid" src="assets/images/bush_trimming.jpg" alt="">
+                        </div>
+                        <h3 class="card-title mb-3">
+                            Bush Trimming
+                        </h3>
+                        <p class="card-text">
+                            Cutting down or removing excess growth, maintain regular trimming as needed
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
 </body>
 </html>

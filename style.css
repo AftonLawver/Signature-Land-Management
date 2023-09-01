@@ -7,6 +7,16 @@
 }
 
 body {
-    height: 5000px;
+
     overflow-x: hidden;
+}
+
+body::before {
+    display: block;
+    content: '';
+    height: 60px;
+}
+
+h1 {
+    position: relative;
 }
