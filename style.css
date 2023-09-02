@@ -7,16 +7,20 @@
 }
 
 body {
-
+    font-family: 'Josefin Sans', sans-serif;
     overflow-x: hidden;
 }
 
 body::before {
     display: block;
     content: '';
-    height: 60px;
+
 }
 
 h1 {
     position: relative;
+}
+
+#company_title {
+    letter-spacing: 4px;
 }
