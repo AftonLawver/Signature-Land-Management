@@ -24,3 +24,9 @@ h1 {
 #company_title {
     letter-spacing: 4px;
 }
+
+html {
+    scroll-padding-top: 60px; /* height of sticky header */
+}
+
+
