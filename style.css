@@ -29,4 +29,22 @@ html {
     scroll-padding-top: 60px; /* height of sticky header */
 }
 
+.gallery {
+    background: #cbcbcb;
+    padding: 80px 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+.gallery img:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+#galleryModal .modal-img {
+    width: 100%;
+}
+
 
