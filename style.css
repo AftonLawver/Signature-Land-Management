@@ -47,4 +47,17 @@ img {
     width: 100%;
 }
 
+#nameAnchor {
+    text-decoration: none;
+}
+
+#nameAnchor:hover {
+    cursor:pointer;
+    opacity: 0.8;
+}
+
+#facebookIcon:hover {
+    opacity: 0.8;
+}
+
 
