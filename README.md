@@ -1,5 +1,5 @@
 
-![Logo of the Project](/assets/images/signature_land_management_banner.png)
+![Logo of the Project](/public/images/signature_land_management_banner.png)
 
 ---
 
