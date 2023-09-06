@@ -60,4 +60,23 @@ img {
     opacity: 0.8;
 }
 
+.w-33 {
+    width: 33%;
+}
+
+#navBarLogo:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 992px) {
+    #company_logo_homepage {
+        width: 60%;
+    }
+}
+
+@media (min-width: 993px) {
+    #company_logo_homepage {
+        width: 33%;
+    }
+}
 
