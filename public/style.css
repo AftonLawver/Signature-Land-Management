@@ -68,6 +68,28 @@ img {
     opacity: 0.8;
 }
 
+form {
+    color: black;
+    margin: 50px 8%;
+    padding: 30px;
+    text-align: left;
+    background: white;
+    border-radius: 10px;
+}
+
+.form-group, .form-check {
+    margin-bottom: 20px;
+}
+
+#labelForServicesRequested {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.form-buttons {
+    text-align: center;
+}
+
 @media (max-width: 992px) {
     #company_logo_homepage {
         width: 60%;

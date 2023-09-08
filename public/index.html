@@ -406,9 +406,89 @@
 
 <!-- Contact -->
 <section id="contact" class="p-3 text-bg-success text-light">
+
     <div class="container text-center">
         <h2 class=" mb-4">Get in touch</h2>
         <hr class="w-50 mx-auto">
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control"
+                           id="firstName"
+                           placeholder="First name">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control"
+                           id="lastName" placeholder="Last name">
+                </div>
+                <div class="form-group">
+                    <input type="tel" class="form-control"
+                           id="phoneNumber"
+                           placeholder="Phone number">
+                </div>
+                <label id="labelForServicesRequested"
+                       for="servicesRequested">Services
+                    Requesting</label>
+                <div class="services-requested" id="servicesRequested">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox"
+                               id="springCleaningCheckBox"
+                               value="Spring Cleaning">
+                        <label class="form-check-label"
+                               for="springCleaningCheckBox">Spring
+                            Cleaning</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input"
+                               type="checkbox"
+                               id="lawnMaintenanceCheckBox"
+                               value="Lawn Maintenance">
+                        <label class="form-check-label"
+                               for="lawnMaintenanceCheckBox">Lawn
+                            Maintenance</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input"
+                               type="checkbox"
+                               id="weedKillerCheckBox"
+                               value="Weed Killer and Fertilizer">
+                        <label class="form-check-label"
+                               for="weedKillerCheckBox">Weed
+                            Killer/Fertilizer</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input"
+                               type="checkbox"
+                               id="bushTrimmingCheckBox"
+                               value="Bush Trimming">
+                        <label class="form-check-label"
+                               for="bushTrimmingCheckBox">Bush
+                        Trimming</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input"
+                               type="checkbox"
+                               id="otherTypeOfServiceCheckBox"
+                               value="Other Service">
+                        <label class="form-check-label"
+                               for="otherTypeOfServiceCheckBox">Other
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control"
+                              id="formTextArea"
+                              rows="3"
+                              placeholder="Type comments or questions here"></textarea>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-dark">Submit
+                    </button>
+                    <input id="resetButton" type="reset" name="clear" class="btn btn-dark" value="Clear Form"/>
+                </div>
+
+            </form>
+        <br>
+        <br>
         <img src="images/logo_cropped.jpg"
              class="opacity-75 w-25 rounded-circle mb-3" alt="">
         <p class="fw-bold mb-0">Signature Land Management</p>
