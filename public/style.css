@@ -89,23 +89,20 @@ form {
     text-align: center;
 }
 
-.form-control.success {
-    border: 2px solid green;
-}
-
-.form-control.error {
-    border: 2px solid red;
-    
-}
-
-#firstNameErrorMessage, #phoneErrorMessage {
+#firstNameErrorMessage, #phoneErrorMessage, #servicesErrorMessage {
     display: none;
     color: red;
     font-size: 12px;
+    margin-top: 1px;
+    margin-left: 2px;
 }
 
 .form-control {
     margin-right: 20px;
+}
+
+#selectOne {
+    font-weight: normal;
 }
 
 

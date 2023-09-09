@@ -19,30 +19,50 @@ document.addEventListener("click", function (e) {
   }
 })
 
-// function validateForm() {
-//   const firstNameInput = document.getElementById('firstName').value;
-//   if (firstNameInput == "") {
-//     let firstNameErrorMessage = document.getElementById("firstNameErrorMessage");
-//     firstNameErrorMessage.style.display = "block";
-//     // alert("First must be filled out");
-//     return false;
-//   }
-//
-//   let phoneNumber = document.getElementById('phoneNumber').value;
-//   if (phoneNumber == "") {
-//   //
-//     let phoneNumberErrorMessage = document.getElementById('phoneErrorMessage');
-//     phoneNumberErrorMessage.style.display = 'block';
-//     return false;
-//   }
-  // const regexForPhone = /^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$/;
-  // if (regexForPhone.test(phoneNumber)) {
-  //   //
-  //   let phoneNumberErrorMessage = document.getElementById('phoneErrorMessage');
-  //   phoneNumberErrorMessage.style.display = 'block';
-  //   phoneNumberErrorMessage.value = "Invalid phone number format. Use (123) 456-7899";
-  //   return false;
-  // }
 
+function validateFirstName() {
+  const firstNameInput = document.getElementById('firstName');
+  if (!firstNameInput.value.match(/^(?=.{1,40}$)[a-zA-Z]+(?:[-'\s][a-zA-Z]+)*$/)) {
+    let firstNameErrorMessage = document.getElementById("firstNameErrorMessage");
+    firstNameErrorMessage.innerHTML = "Please enter a valid first" +
+      " name.";
+    firstNameInput.style.border = "1px solid red";
+    firstNameErrorMessage.style.display = "block";
+    return false;
+  }
+  else {
+    let firstNameErrorMessage = document.getElementById("firstNameErrorMessage");
+    firstNameInput.style.border = "1px solid green";
+    firstNameErrorMessage.style.display = "none";
+    return true;
+  }
+}
 
-// }
+function validateServices() {
+
+}
+
+function validatePhone() {
+  const phoneNumberInput = document.getElementById('phoneNumber');
+  const phoneNumberErrorMessage = document.getElementById("phoneErrorMessage");
+  if (!phoneNumberInput.value.match(/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/)) {
+    phoneNumberErrorMessage.innerHTML = "Please enter a valid phone" +
+      " number.";
+    phoneNumberInput.style.border = "1px solid red";
+    phoneNumberErrorMessage.style.display = "block";
+    return false;
+  }
+  else {
+    phoneNumberInput.style.border = "1px solid green";
+    phoneNumberErrorMessage.style.display = "none";
+    return true;
+  }
+}
+function validateForm() {
+  if (validateFirstName() && validatePhone()) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
