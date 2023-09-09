@@ -39,6 +39,21 @@ function validateFirstName() {
 }
 
 function validateServices() {
+  const checkboxes = document.querySelectorAll(
+    'input[type="checkbox"]',
+  );
+
+  if (!atLeastOneCheckboxChecked(checkboxes)) {
+    const servicesErrorMessage = document.getElementById("servicesErrorMessage");
+    servicesErrorMessage.style.display = "block";
+  }
+  else {
+    const servicesErrorMessage = document.getElementById("servicesErrorMessage");
+    servicesErrorMessage.style.display = "none";
+  }
+
+  // need to remove services error message when one checkbox is
+  // checked.
 
 }
 
@@ -59,10 +74,26 @@ function validatePhone() {
   }
 }
 function validateForm() {
-  if (validateFirstName() && validatePhone()) {
+  if (validateFirstName() && validatePhone() && validateServices()) {
     return true;
   }
   else {
     return false;
   }
 }
+
+function atLeastOneCheckboxChecked(checkboxes) {
+  return Array.from(checkboxes).some(
+    checkbox => checkbox.checked,
+  );
+}
+
+
+
+function findAllSelectedCheckboxes(checkboxes) {
+  return Array.from(checkboxes).filter(
+    checkbox => checkbox.checked,
+  );
+}
+
+

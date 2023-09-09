@@ -410,7 +410,7 @@
     <div class="container text-center">
         <h2 class=" mb-4">Get in touch</h2>
         <hr class="w-50 mx-auto">
-            <form name="myForm" onsubmit="return validateForm()">
+            <form id="myForm" onsubmit="return validateForm()">
                 <div class="form-group">
                     <input type="text" class="form-control"
                            id="firstName"
@@ -441,7 +441,7 @@
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox"
                                id="springCleaningCheckBox"
-                               value="Spring Cleaning">
+                               value="Spring Cleaning" name="services">
                         <label class="form-check-label"
                                for="springCleaningCheckBox">Spring
                             Cleaning</label>
@@ -450,7 +450,7 @@
                         <input class="form-check-input"
                                type="checkbox"
                                id="lawnMaintenanceCheckBox"
-                               value="Lawn Maintenance">
+                               value="Lawn Maintenance" name="services">
                         <label class="form-check-label"
                                for="lawnMaintenanceCheckBox">Lawn
                             Maintenance</label>
@@ -459,7 +459,7 @@
                         <input class="form-check-input"
                                type="checkbox"
                                id="weedKillerCheckBox"
-                               value="Weed Killer and Fertilizer">
+                               value="Weed Killer and Fertilizer" name="services">
                         <label class="form-check-label"
                                for="weedKillerCheckBox">Weed
                             Killer/Fertilizer</label>
@@ -468,7 +468,7 @@
                         <input class="form-check-input"
                                type="checkbox"
                                id="bushTrimmingCheckBox"
-                               value="Bush Trimming">
+                               value="Bush Trimming" name="services">
                         <label class="form-check-label"
                                for="bushTrimmingCheckBox">Bush
                         Trimming</label>
@@ -494,7 +494,6 @@
                     </button>
                     <input id="resetButton" type="reset" name="clear" class="btn btn-dark" value="Clear Form"/>
                 </div>
-
             </form>
         <br>
         <br>
