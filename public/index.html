@@ -410,7 +410,7 @@
     <div class="container text-center">
         <h2 class=" mb-4">Get in touch</h2>
         <hr class="w-50 mx-auto">
-            <form id="myForm" onsubmit="return validateForm()">
+            <form id="myForm">
                 <div class="form-group">
                     <input type="text" class="form-control"
                            id="firstName"
@@ -494,9 +494,21 @@
                               placeholder="Type comments or questions here"></textarea>
                 </div>
                 <div class="form-buttons">
-                    <button type="submit" class="btn btn-dark">Submit
+                    <button type="submit" class="btn btn-dark"
+                            >Submit
                     </button>
-                    <input id="resetButton" type="reset" name="clear" class="btn btn-dark" value="Clear Form"/>
+                    <input id="resetButton" type="reset"
+                           name="clear" class="btn btn-dark" value="Clear Form"/>
+                </div>
+
+                <div id="loadingSection"
+                     class="pt-2 d-flex justify-content-center">
+                    <div id="spinner" class="spinner-border"
+                         role="status">
+                    </div>
+                    <p class="text-success"
+                       id="loadingMessage">
+                        Inquiry sent!</p>
                 </div>
             </form>
         <br>

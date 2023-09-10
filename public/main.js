@@ -49,6 +49,27 @@ checkboxes.forEach(function(checkbox) {
   })
 });
 
+let form = document.getElementById("myForm");
+
+form.addEventListener("submit", evt => {
+  // don't actually submit this form to its associated URL:
+  evt.preventDefault();
+
+  if (validateFirstName() && validatePhone()) {
+    let spinner = document.getElementById("spinner");
+    spinner.style.display = "block";
+    // simulate data being sent to server
+    setTimeout(() => {
+      spinner.style.display = "none";
+      let loadingMessage = document.getElementById("loadingMessage");
+      loadingMessage.style.display = "block";
+    }, 10000)
+  }
+  else {
+    return false;
+  }
+});
+
 function validateFirstName() {
   const firstNameInput = document.getElementById('firstName');
   if (!firstNameInput.value.match(/^(?=.{1,40}$)[a-zA-Z]+(?:[-'\s][a-zA-Z]+)*$/)) {
@@ -82,14 +103,21 @@ function validatePhone() {
     return true;
   }
 }
-function validateForm() {
-  if (validateFirstName() && validatePhone()) {
-    return true;
-  }
-  else {
-    return false;
-  }
-}
+// function validateForm() {
+//   if (validateFirstName() && validatePhone()) {
+//     let spinner = document.getElementById("spinner");
+//     spinner.style.display = "block";
+//     // simulate data being sent to server
+//     setTimeout(() => {
+//       spinner.style.display = "none";
+//       let loadingMessage = document.getElementById("loadingMessage");
+//       loadingMessage.style.display = "inline";
+//     }, 2000)
+//   }
+//   else {
+//     return false;
+//   }
+// }
 
 
 
