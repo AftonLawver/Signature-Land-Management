@@ -19,42 +19,51 @@ document.addEventListener("click", function (e) {
   }
 })
 
+// Select all checkboxes with the name 'settings' using querySelectorAll.
+var checkboxes = document.querySelectorAll("input[type=checkbox][name=services]");
+let requestedServices = []
+
+/*
+For IE11 support, replace arrow functions with normal functions and
+use a polyfill for Array.forEach:
+https://vanillajstoolkit.com/polyfills/arrayforeach/
+*/
+
+// Use Array.forEach to add an event listener to each checkbox.
+checkboxes.forEach(function(checkbox) {
+  checkbox.addEventListener('change', function() {
+    requestedServices =
+        Array.from(checkboxes) // Convert checkboxes to an array to use filter and map.
+            .filter(i => i.checked) // Use Array.filter to remove unchecked checkboxes.
+            .map(i => i.value) // Use Array.map to extract only the checkbox values from the array of objects.
+
+    console.log(requestedServices)
+    const servicesErrorMessage = document.getElementById("servicesErrorMessage");
+
+    if (requestedServices.length === 0) {
+      servicesErrorMessage.style.display = "block";
+    }
+    else {
+      servicesErrorMessage.style.display = "none";
+    }
+  })
+});
 
 function validateFirstName() {
   const firstNameInput = document.getElementById('firstName');
   if (!firstNameInput.value.match(/^(?=.{1,40}$)[a-zA-Z]+(?:[-'\s][a-zA-Z]+)*$/)) {
     let firstNameErrorMessage = document.getElementById("firstNameErrorMessage");
     firstNameErrorMessage.innerHTML = "Please enter a valid first" +
-      " name.";
+        " name.";
     firstNameInput.style.border = "1px solid red";
     firstNameErrorMessage.style.display = "block";
     return false;
-  }
-  else {
+  } else {
     let firstNameErrorMessage = document.getElementById("firstNameErrorMessage");
     firstNameInput.style.border = "1px solid green";
     firstNameErrorMessage.style.display = "none";
     return true;
   }
-}
-
-function validateServices() {
-  const checkboxes = document.querySelectorAll(
-    'input[type="checkbox"]',
-  );
-
-  if (!atLeastOneCheckboxChecked(checkboxes)) {
-    const servicesErrorMessage = document.getElementById("servicesErrorMessage");
-    servicesErrorMessage.style.display = "block";
-  }
-  else {
-    const servicesErrorMessage = document.getElementById("servicesErrorMessage");
-    servicesErrorMessage.style.display = "none";
-  }
-
-  // need to remove services error message when one checkbox is
-  // checked.
-
 }
 
 function validatePhone() {
@@ -74,7 +83,7 @@ function validatePhone() {
   }
 }
 function validateForm() {
-  if (validateFirstName() && validatePhone() && validateServices()) {
+  if (validateFirstName() && validatePhone()) {
     return true;
   }
   else {
@@ -82,18 +91,6 @@ function validateForm() {
   }
 }
 
-function atLeastOneCheckboxChecked(checkboxes) {
-  return Array.from(checkboxes).some(
-    checkbox => checkbox.checked,
-  );
-}
 
-
-
-function findAllSelectedCheckboxes(checkboxes) {
-  return Array.from(checkboxes).filter(
-    checkbox => checkbox.checked,
-  );
-}
 
 
