@@ -23,13 +23,7 @@ document.addEventListener("click", function (e) {
 var checkboxes = document.querySelectorAll("input[type=checkbox][name=services]");
 let requestedServices = []
 
-/*
-For IE11 support, replace arrow functions with normal functions and
-use a polyfill for Array.forEach:
-https://vanillajstoolkit.com/polyfills/arrayforeach/
-*/
 
-// Use Array.forEach to add an event listener to each checkbox.
 checkboxes.forEach(function(checkbox) {
   checkbox.addEventListener('change', function() {
     requestedServices =
@@ -51,19 +45,21 @@ checkboxes.forEach(function(checkbox) {
 
 let form = document.getElementById("myForm");
 
-form.addEventListener("submit", evt => {
+form.addEventListener("submit", e => {
   // don't actually submit this form to its associated URL:
-  evt.preventDefault();
+  e.preventDefault();
 
   if (validateFirstName() && validatePhone()) {
     let spinner = document.getElementById("spinner");
     spinner.style.display = "block";
-    // simulate data being sent to server
+    // send the data to the database
+    extractFormData();
+
     setTimeout(() => {
       spinner.style.display = "none";
       let loadingMessage = document.getElementById("loadingMessage");
       loadingMessage.style.display = "block";
-    }, 10000)
+    }, 5000)
   }
   else {
     return false;
@@ -103,21 +99,18 @@ function validatePhone() {
     return true;
   }
 }
-// function validateForm() {
-//   if (validateFirstName() && validatePhone()) {
-//     let spinner = document.getElementById("spinner");
-//     spinner.style.display = "block";
-//     // simulate data being sent to server
-//     setTimeout(() => {
-//       spinner.style.display = "none";
-//       let loadingMessage = document.getElementById("loadingMessage");
-//       loadingMessage.style.display = "inline";
-//     }, 2000)
-//   }
-//   else {
-//     return false;
-//   }
-// }
+
+function extractFormData() {
+  let firstName = document.getElementById("firstName").value;
+  let lastName = document.getElementById("lastName").value;
+  let phoneNumber = document.getElementById("phoneNumber").value;
+
+  // get all of the checked services
+  let requestedServicesData = requestedServices;
+  let comments = document.getElementById("formTextArea").value;
+  return {Firstname: firstName, Lastname: lastName, Phone: phoneNumber, ServicesRequested: requestedServicesData, Message: comments};
+}
+
 
 
 

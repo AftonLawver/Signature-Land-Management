@@ -80,3 +80,5 @@ fabric.properties
 /bootstrap/bootstrap.min.js
 
 /node_modules
+
+*.env
