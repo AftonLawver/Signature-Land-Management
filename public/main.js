@@ -53,17 +53,35 @@ form.addEventListener("submit", e => {
     let spinner = document.getElementById("spinner");
     spinner.style.display = "block";
     // send the data to the database
-    extractFormData();
 
-    setTimeout(() => {
-      spinner.style.display = "none";
-      let loadingMessage = document.getElementById("loadingMessage");
-      loadingMessage.style.display = "block";
-    }, 5000)
+    const data = extractFormData();
+    console.log(data);
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      },
+      body: JSON.stringify(data),
+    }
+
+    fetch('/', options)
+      .then(response => {
+        if (response.ok) {
+          spinner.style.display = "none";
+          let loadingMessage = document.getElementById("loadingMessage");
+          loadingMessage.style.display = "block";
+          console.log("Data received by database.")
+        }
+        else {
+          console.log("Data not received by database successfully.");
+        }
+      }).catch(err => {
+      console.log('Error with database receiving data.')
+    })
+    return true;
   }
-  else {
-    return false;
-  }
+  return false;
+
 });
 
 function validateFirstName() {
@@ -101,13 +119,11 @@ function validatePhone() {
 }
 
 function extractFormData() {
-  let firstName = document.getElementById("firstName").value;
-  let lastName = document.getElementById("lastName").value;
-  let phoneNumber = document.getElementById("phoneNumber").value;
-
-  // get all of the checked services
+  let firstName = document.getElementById('firstName').value;
+  let lastName = document.getElementById('lastName').value;
+  let phoneNumber = document.getElementById('phoneNumber').value;
   let requestedServicesData = requestedServices;
-  let comments = document.getElementById("formTextArea").value;
+  let comments = document.getElementById('formTextArea').value;
   return {Firstname: firstName, Lastname: lastName, Phone: phoneNumber, ServicesRequested: requestedServicesData, Message: comments};
 }
 
