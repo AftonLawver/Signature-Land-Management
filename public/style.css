@@ -30,7 +30,7 @@ html {
 }
 
 .gallery {
-    background: #cbcbcb;
+    background: #E3E3E3;
     padding: 80px 0;
 }
 
@@ -80,3 +80,14 @@ img {
     }
 }
 
+.text-green {
+    color: #19714A;
+}
+
+.text-bg-green {
+    background-color: #19714A;
+}
+
+.text-light-green {
+    color: #249E6C;
+}
