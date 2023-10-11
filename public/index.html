@@ -15,7 +15,7 @@
     <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
-    <script type="text/javascript" src="main.js"></script>
+    <script defer type="text/javascript" src="main.js"></script>
 
 </head>
 <body>
@@ -201,10 +201,6 @@
     </div>
 </section>
 
-
-<!-- Gallery -->
-<!-- Make sliding window gallery for photos -->
-
 <section id="gallery" class="p-3">
     <div class="container">
         <h2 class="text-center mb-4">Gallery</h2>
@@ -214,8 +210,6 @@
             Have a project in mind? <span><a href="#contact">Give us a call</a></span> to discuss the details.
         </p>
         <hr class="w-50 mx-auto">
-
-        <!-- Carousel for Gallery of 5 photos -->
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -336,14 +330,11 @@
     </div>
 </section>
 
-<!-- Modal -->
 <div class="modal fade" id="galleryModal" tabindex="-1"
      aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-<!--                <h1 class="modal-title fs-5"-->
-<!--                    id="exampleModalLabel">Hello</h1>-->
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -409,6 +400,109 @@
     <div class="container text-center">
         <h2 class=" mb-4">Get in touch</h2>
         <hr class="w-50 mx-auto">
+            <form id="myForm">
+                <div class="form-group">
+                    <input type="text" class="form-control"
+                           id="firstName"
+                           placeholder="First name (required)"
+                           onkeyup="validateFirstName()">
+                    <p id="firstNameErrorMessage">Must enter a first name.</p>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control"
+                           id="lastName" placeholder="Last name">
+                </div>
+                <div class="form-group">
+                    <input type="tel" class="form-control"
+                           id="phoneNumber"
+                           placeholder="Phone number (required)"
+                           onkeyup="validatePhone()">
+                    <p id="phoneErrorMessage">Must enter a valid
+                        phone number.</p>
+                </div>
+                <label id="labelForServicesRequested"
+                       for="servicesRequested">Services
+                    Requesting
+                    <span id="selectOne">(select one)</span></label>
+                <p id="servicesErrorMessage">Must select at least
+                    one service.</p>
+
+                <div class="services-requested" id="servicesRequested">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox"
+                               id="springCleaningCheckBox"
+                               value="Spring Cleaning"
+                               name="services">
+                        <label class="form-check-label"
+                               for="springCleaningCheckBox">Spring
+                            Cleaning</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input"
+                               type="checkbox"
+                               id="lawnMaintenanceCheckBox"
+                               value="Lawn Maintenance"
+                               name="services">
+                        <label class="form-check-label"
+                               for="lawnMaintenanceCheckBox">Lawn
+                            Maintenance</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input"
+                               type="checkbox"
+                               id="weedKillerCheckBox"
+                               value="Weed Killer and Fertilizer"
+                               name="services">
+                        <label class="form-check-label"
+                               for="weedKillerCheckBox">Weed
+                            Killer/Fertilizer</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input"
+                               type="checkbox"
+                               id="bushTrimmingCheckBox"
+                               value="Bush Trimming" name="services">
+                        <label class="form-check-label"
+                               for="bushTrimmingCheckBox">Bush
+                        Trimming</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input"
+                               type="checkbox"
+                               id="otherTypeOfServiceCheckBox"
+                               name="services"
+                               value="Other Service">
+                        <label class="form-check-label"
+                               for="otherTypeOfServiceCheckBox">Other
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control"
+                              id="formTextArea"
+                              rows="3"
+                              placeholder="Type comments or questions here"></textarea>
+                </div>
+                <div class="form-buttons">
+                    <button id="submitButton" class="btn btn-dark"
+                            >Submit
+                    </button>
+                    <input id="resetButton" type="reset"
+                           name="clear" class="btn btn-dark" value="Clear Form"/>
+                </div>
+
+                <div id="loadingSection"
+                     class="pt-2 d-flex justify-content-center">
+                    <div id="spinner" class="spinner-border"
+                         role="status">
+                    </div>
+                    <p class="text-success"
+                       id="loadingMessage">
+                        Inquiry sent!</p>
+                </div>
+            </form>
+        <br>
+        <br>
         <img src="images/logo_cropped.jpg"
              class="opacity-75 w-25 rounded-circle mb-3" alt="" loading="lazy">
         <p class="fw-bold mb-0">Signature Land Management</p>
@@ -429,6 +523,5 @@
                 href="https://www.aftonlawver.com">Afton Lawver</a></p>
     </div>
 </section>
-
 </body>
 </html>

@@ -68,6 +68,46 @@ img {
     opacity: 0.8;
 }
 
+form {
+    color: black;
+    margin: 50px 8%;
+    padding: 30px;
+    text-align: left;
+    background: white;
+    border-radius: 10px;
+}
+
+.form-group, .form-check {
+    margin-bottom: 20px;
+}
+
+#labelForServicesRequested {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.form-buttons {
+    text-align: center;
+}
+
+#firstNameErrorMessage, #phoneErrorMessage, #servicesErrorMessage {
+    display: none;
+    color: red;
+    font-size: 12px;
+    margin-top: 1px;
+    margin-left: 2px;
+}
+
+.form-control {
+    margin-right: 20px;
+}
+
+#selectOne {
+    font-weight: normal;
+}
+
+
+
 @media (max-width: 992px) {
     #company_logo_homepage {
         width: 60%;
@@ -91,3 +131,25 @@ img {
 .text-light-green {
     color: #249E6C;
 }
+.spinner-border {
+    display: none;
+}
+
+#loadingMessage {
+    display: none;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
