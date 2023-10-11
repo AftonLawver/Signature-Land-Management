@@ -201,10 +201,6 @@
     </div>
 </section>
 
-
-<!-- Gallery -->
-<!-- Make sliding window gallery for photos -->
-
 <section id="gallery" class="p-3">
     <div class="container">
         <h2 class="text-center mb-4">Gallery</h2>
@@ -214,8 +210,6 @@
             Have a project in mind? <span><a href="#contact">Give us a call</a></span> to discuss the details.
         </p>
         <hr class="w-50 mx-auto">
-
-        <!-- Carousel for Gallery of 5 photos -->
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -336,14 +330,11 @@
     </div>
 </section>
 
-<!-- Modal -->
 <div class="modal fade" id="galleryModal" tabindex="-1"
      aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-<!--                <h1 class="modal-title fs-5"-->
-<!--                    id="exampleModalLabel">Hello</h1>-->
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -406,7 +397,6 @@
 
 <!-- Contact -->
 <section id="contact" class="p-3 text-bg-success text-light">
-
     <div class="container text-center">
         <h2 class=" mb-4">Get in touch</h2>
         <hr class="w-50 mx-auto">
@@ -494,7 +484,7 @@
                               placeholder="Type comments or questions here"></textarea>
                 </div>
                 <div class="form-buttons">
-                    <button type="submit" class="btn btn-dark"
+                    <button id="submitButton" class="btn btn-dark"
                             >Submit
                     </button>
                     <input id="resetButton" type="reset"

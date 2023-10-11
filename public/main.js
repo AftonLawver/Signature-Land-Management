@@ -20,9 +20,8 @@ document.addEventListener("click", function (e) {
 })
 
 // Select all checkboxes with the name 'settings' using querySelectorAll.
-var checkboxes = document.querySelectorAll("input[type=checkbox][name=services]");
+let checkboxes = document.querySelectorAll("input[type=checkbox][name=services]");
 let requestedServices = []
-
 
 checkboxes.forEach(function(checkbox) {
   checkbox.addEventListener('change', function() {
@@ -30,8 +29,6 @@ checkboxes.forEach(function(checkbox) {
         Array.from(checkboxes) // Convert checkboxes to an array to use filter and map.
             .filter(i => i.checked) // Use Array.filter to remove unchecked checkboxes.
             .map(i => i.value) // Use Array.map to extract only the checkbox values from the array of objects.
-
-    console.log(requestedServices)
     const servicesErrorMessage = document.getElementById("servicesErrorMessage");
 
     if (requestedServices.length === 0) {
@@ -43,44 +40,36 @@ checkboxes.forEach(function(checkbox) {
   })
 });
 
-let form = document.getElementById("myForm");
+const submitButton = document.getElementById("submitButton");
 
-form.addEventListener("submit", e => {
-  // don't actually submit this form to its associated URL:
+submitButton.addEventListener("click", e => {
   e.preventDefault();
+  const loadingMessage = document.getElementById("loadingMessage");
+  if (loadingMessage.style.display === "block") {
+    loadingMessage.innerText = "Form already submitted."
+    return;
+  }
+  let p = new Promise((resolve, reject) => {
+    let isFormValid = validateForm();
 
-  if (validateFirstName() && validatePhone()) {
+    if (isFormValid) {
+      resolve();
+    } else {
+      reject();
+    }
+  })
+
+  p.then(() => {
     let spinner = document.getElementById("spinner");
     spinner.style.display = "block";
-    // send the data to the database
+    setTimeout(() => {
+      sendText();
+      spinner.style.display = "none";
+      let loadingMessage = document.getElementById("loadingMessage");
+      loadingMessage.style.display = "block";
+    }, 2000);
 
-    const data = extractFormData();
-    console.log(data);
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': "application/json"
-      },
-      body: JSON.stringify(data),
-    }
-
-    fetch('/', options)
-      .then(response => {
-        if (response.ok) {
-          spinner.style.display = "none";
-          let loadingMessage = document.getElementById("loadingMessage");
-          loadingMessage.style.display = "block";
-          console.log("Data received by database.")
-        }
-        else {
-          console.log("Data not received by database successfully.");
-        }
-      }).catch(err => {
-      console.log('Error with database receiving data.')
-    })
-    return true;
-  }
-  return false;
+  }).catch(error => console.log(error));
 
 });
 
@@ -125,7 +114,54 @@ function extractFormData() {
   let requestedServicesData = requestedServices;
   let comments = document.getElementById('formTextArea').value;
   return {Firstname: firstName, Lastname: lastName, Phone: phoneNumber, ServicesRequested: requestedServicesData, Message: comments};
+
 }
+
+function validateForm() {
+  if (validateFirstName() && validatePhone()) {
+
+    // send the data to the database
+    const data = extractFormData();
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      },
+      body: JSON.stringify(data)
+    }
+
+    fetch('/', options)
+        .then(response => {
+          if (response.ok) {
+            console.log("Data received by database.")
+          }
+          else {
+            console.log("Data not received by database successfully.");
+          }
+        }).catch(err => {
+      console.log('Error with database receiving data.')
+    })
+    return true;
+  }
+  return false;
+}
+
+function sendText() {
+  const data = extractFormData();
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': "application/json"
+    },
+    body: JSON.stringify(data)
+  };
+  fetch('/send', options)
+      .then((response) => response.json())
+      .then((data) => {
+
+      })
+}
+
 
 
 
