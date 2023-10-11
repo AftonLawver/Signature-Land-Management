@@ -12,14 +12,13 @@
 
 
 ### Features in Progress
-- Make updated contact form and store user info on backend mongodb database.
+- None at the moment.
 
 
 ### Bugs to fix
-- Wide screen issue with homepage not fitting all content.
-- Loading time - look into compressing images to increase laoding speeds.
+- None at the moment.
 
-**Gif**
+
 
 
 
