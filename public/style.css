@@ -120,6 +120,13 @@ form {
     }
 }
 
+@media (max-width: 576px) {
+    form {
+        margin: 20px 1%;
+        padding: 15px;
+    }
+}
+
 .text-green {
     color: #19714A;
 }
