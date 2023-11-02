@@ -114,7 +114,6 @@ function extractFormData() {
   let requestedServicesData = requestedServices;
   let comments = document.getElementById('formTextArea').value;
   return {Firstname: firstName, Lastname: lastName, Phone: phoneNumber, ServicesRequested: requestedServicesData, Message: comments};
-
 }
 
 function validateForm() {
